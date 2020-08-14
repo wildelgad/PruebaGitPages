@@ -1,35 +1,36 @@
 function unidades(entradaUnidades){
     let unidadesRomanas = "";
-    switch (entradaUnidades){
+    switch (entradaUnidades){   
         case '1':
-            unidadesRomanas += "I";
+            unidadesRomanas = "I";
             break;
         case '2':
-            unidadesRomanas += "II";
+            unidadesRomanas = "II";
             break;
         case '3':
-            unidadesRomanas += "III";
+            unidadesRomanas = "III";
             break;
         case '4':
-            unidadesRomanas += "IV";
+            unidadesRomanas = "IV";
             break;
         case '5':
-            unidadesRomanas += "V";
+            unidadesRomanas = "V";
             break;
         case '6':
-            unidadesRomanas += "VI";
+            unidadesRomanas = "VI";
             break;
         case '7':
-            unidadesRomanas += "VII";
+            unidadesRomanas = "VII";
             break;
         case '8':
-            unidadesRomanas += "VIII";
+            unidadesRomanas = "VIII";
             break;
         case '9':
-            unidadesRomanas += "IX";
+            unidadesRomanas = "IX";
             break;
         default:
             console.log("opción equivocada para las unidades ");
+            break;
     }
     return unidadesRomanas;
 }
@@ -37,71 +38,80 @@ function unidades(entradaUnidades){
 function decenas(entradaDecenas){
     let decenasRomanas = "";
     switch (entradaDecenas){
+        case '0':
+            decenasRomanas = "";
+            break;
         case '1':
-            decenasRomanas += "X";
+            decenasRomanas = "X";
             break;
         case '2':
-            decenasRomanas += "XX";
+            decenasRomanas = "XX";
             break;
         case '3':
-            decenasRomanas += "XXX";
+            decenasRomanas = "XXX";
             break;
         case '4':
-            decenasRomanas += "IL";
+            decenasRomanas = "IL";
             break;
         case '5':
-            decenasRomanas += "L";
+            decenasRomanas = "L";
             break;
         case '6':
-            decenasRomanas += "LX";
+            decenasRomanas = "LX";
             break;
         case '7':
-            decenasRomanas += "LXX";
+            decenasRomanas = "LXX";
             break;
         case '8':
-            decenasRomanas += "LXXX";
+            decenasRomanas = "LXXX";
             break;
         case '9':
-            decenasRomanas += "XC";
+            decenasRomanas = "XC";
             break;
         default:
             console.log("opción equivocada para las decenas ");
+            break;
     }
-    return decenas;
+    return decenasRomanas;
 }
 
 function centenas(entradaCentenas){
     let centenasRomanas = "";
     switch (entradaCentenas){
+        case '0':
+            centenasRomanas = "";
+            console.log("se ingresó un cero en las centenas");
+            break;
         case '1':
-            centenasRomanas += "C";
+            centenasRomanas = "C";
             break;
         case '2':
-            centenasRomanas += "CC";
+            centenasRomanas = "CC";
             break;
         case '3':
-            centenasRomanas += "CCC";
+            centenasRomanas = "CCC";
             break;
         case '4':
-            centenasRomanas += "CD";
+            centenasRomanas = "CD";
             break;
         case '5':
-            centenasRomanas += "D";
+            centenasRomanas = "D";
             break;
         case '6':
-            centenasRomanas += "DC";
+            centenasRomanas = "DC";
             break;
         case '7':
-            centenasRomanas += "DCC";
+            centenasRomanas = "DCC";
             break;
         case '8':
-            centenasRomanas += "DCCC";
+            centenasRomanas = "DCCC";
             break;
         case '9':
-            centenasRomanas += "CM";
+            centenasRomanas = "CM";
             break;
         default:
             console.log("opción equivocada para las centenas ");
+            break;
     }
     return centenasRomanas;
 }
@@ -109,35 +119,40 @@ function centenas(entradaCentenas){
 function miles(entradaMiles){
     let milesRomanas = "";
     switch (entradaMiles){
+        case '0':
+            milesRomanas = ""
+            console.log("se ingresó un Cero en los miles");
+            break;
         case '1':
-            milesRomanas += "M";
+            milesRomanas = "M";
             break;
         case '2':
-            milesRomanas += "MM";
+            milesRomanas = "MM";
             break;
         case '3':
-            milesRomanas += "MMM";
+            milesRomanas = "MMM";
             break;
         case '4':
-            milesRomanas += "MV";
+            milesRomanas = "MV";
             break;
         case '5':
-            milesRomanas += "V";
+            milesRomanas = "V";
             break;
         case '6':
-            milesRomanas += "VI";
+            milesRomanas = "VI";
             break;
         case '7':
-            milesRomanas += "VII";
+            milesRomanas = "VII";
             break;
         case '8':
-            milesRomanas += "VIII";
+            milesRomanas = "VIII";
             break;
         case '9':
-            milesRomanas += "IX";
+            milesRomanas = "IX";
             break;
         default:
             console.log("opción equivocada para los Miles ");
+            break;
     }
     return milesRomanas;
 }
@@ -146,34 +161,17 @@ function diezMiles(entradaDiezMiles){
     let diezMilesRomanos = "";
     switch (entradaDiezMiles){
         case '1':
-            diezMilesRomanos += "X";
+            diezMilesRomanos = "X";
             break;
         case '2':
-            diezMilesRomanos += "XX";
+            diezMilesRomanos = "XX";
             break;
         case '3':
-            diezMilesRomanos += "XXX";
+            diezMilesRomanos = "XXX";
             break;
-        // case 4:
-        //     diezMilesRomanos += "MV";
-        //     break;
-        // case 5:
-        //     diezMilesRomanos += "V";
-        //     break;
-        // case 6:
-        //     diezMilesRomanos += "VM";
-        //     break;
-        // case 7:
-        //     diezMilesRomanos += "VMM";
-        //     break;
-        // case 8:
-        //     diezMilesRomanos += "VMMM";
-        //     break;
-        // case 9:
-        //     diezMilesRomanos += "MX";
-        //     break;
         default:
             console.log("opción equivocada para los DiezMiles ");
+            break;
     }
     return diezMiles;
 }
@@ -191,30 +189,30 @@ function convertToRoman(num) {
     let digitoRomano = "";
     let numEnString = num.toString();
 
-    for(let i = 0; i <= numEnString.length; i++){
+    console.log('num tiene ' + numEnString.length + ' digitos');
 
-        digito = numEnString.substr(num.length-1, 1);
+    for(let i = 0; i <= numEnString.length-1; i++){
+
+        digito = numEnString.substr(numEnString.length-1-i, 1);
         console.log('i vale     =   ' + i + '\n' +
                     'digito vale=   ' + digito);
 
-        if(i = 0){
-            console.log("num");
-            digitoRomano  += unidades(digito);
+        if(i == 0){
+            digitoRomano  = digitoRomano + unidades(digito);
         }
-        if(i = 1){
+        console.log("digito es: " + digito)
+        if(i == 1){
             digitoRomano  = decenas(digito) + digitoRomano;
         }
-        if(i = 2){
+        if(i == 2){
             digitoRomano  = centenas(digito + digitoRomano);
         }
-        if(i = 3){
+        if(i == 3){
             digitoRomano  = miles(digito) + digitoRomano;
         }
-        if(i = 4){
+        if(i == 4){
             digitoRomano  = diezMiles(digito) + digitoRomano;
         }
-
-        // console.log("numEnString es: " + numEnString + " y digito romano es: " + digitoRomano);
     }
 
     num = digitoRomano;
@@ -222,4 +220,4 @@ function convertToRoman(num) {
     return num;
    }
 
-   convertToRoman(36);
+   convertToRoman(316);
