@@ -1,6 +1,6 @@
 function unidades(entradaUnidades){
     let unidadesRomanas = "";
-    switch (entradaUnidades){   
+    switch (entradaUnidades){
         case '1':
             unidadesRomanas = "I";
             break;
@@ -28,6 +28,9 @@ function unidades(entradaUnidades){
         case '9':
             unidadesRomanas = "IX";
             break;
+        case '10':
+            unidadesRomanas = "X";
+            break;
         default:
             console.log("opción equivocada para las unidades ");
             break;
@@ -38,9 +41,6 @@ function unidades(entradaUnidades){
 function decenas(entradaDecenas){
     let decenasRomanas = "";
     switch (entradaDecenas){
-        case '0':
-            decenasRomanas = "";
-            break;
         case '1':
             decenasRomanas = "X";
             break;
@@ -51,7 +51,7 @@ function decenas(entradaDecenas){
             decenasRomanas = "XXX";
             break;
         case '4':
-            decenasRomanas = "IL";
+            decenasRomanas = "XL";
             break;
         case '5':
             decenasRomanas = "L";
@@ -68,6 +68,9 @@ function decenas(entradaDecenas){
         case '9':
             decenasRomanas = "XC";
             break;
+        case '10':
+            decenasRomanas =  "C";
+            break;
         default:
             console.log("opción equivocada para las decenas ");
             break;
@@ -78,10 +81,6 @@ function decenas(entradaDecenas){
 function centenas(entradaCentenas){
     let centenasRomanas = "";
     switch (entradaCentenas){
-        case '0':
-            centenasRomanas = "";
-            console.log("se ingresó un cero en las centenas");
-            break;
         case '1':
             centenasRomanas = "C";
             break;
@@ -119,10 +118,6 @@ function centenas(entradaCentenas){
 function miles(entradaMiles){
     let milesRomanas = "";
     switch (entradaMiles){
-        case '0':
-            milesRomanas = ""
-            console.log("se ingresó un Cero en los miles");
-            break;
         case '1':
             milesRomanas = "M";
             break;
@@ -173,7 +168,7 @@ function diezMiles(entradaDiezMiles){
             console.log("opción equivocada para los DiezMiles ");
             break;
     }
-    return diezMiles;
+    return diezMilesRomanos;
 }
 
 function  separaUnidades(divi){
@@ -189,30 +184,45 @@ function convertToRoman(num) {
     let digitoRomano = "";
     let numEnString = num.toString();
 
-    console.log('num tiene ' + numEnString.length + ' digitos');
 
-    for(let i = 0; i <= numEnString.length-1; i++){
+    if(num > 0 && num <= 10){
+        digitoRomano += unidades(numEnString);
+    }
 
-        digito = numEnString.substr(numEnString.length-1-i, 1);
-        console.log('i vale     =   ' + i + '\n' +
-                    'digito vale=   ' + digito);
+    if(num > 10 && num <= 100){
+        if(numEnString.length === 3){
+            digitoRomano = 'C';
+        }
+        else{
+            digitoRomano += decenas(numEnString.substr(0, 1)) +
+            unidades(numEnString.substr(1, 1));
+        }
+    }
 
-        if(i == 0){
-            digitoRomano  = digitoRomano + unidades(digito);
+    if(num > 100 && num <= 1000){
+        if(numEnString.length === 4){
+            digitoRomano = 'M';
         }
-        console.log("digito es: " + digito)
-        if(i == 1){
-            digitoRomano  = decenas(digito) + digitoRomano;
+        else{
+            digitoRomano += centenas(numEnString.substr(0, 1)) +
+                            decenas(numEnString.substr(1, 1)) +
+                            unidades(numEnString.substr(2, 1));
         }
-        if(i == 2){
-            digitoRomano  = centenas(digito + digitoRomano);
-        }
-        if(i == 3){
-            digitoRomano  = miles(digito) + digitoRomano;
-        }
-        if(i == 4){
-            digitoRomano  = diezMiles(digito) + digitoRomano;
-        }
+    }
+
+    if (num > 1000 && num <= 10000){
+        digitoRomano += miles(numEnString.substr(0, 1)) +
+                        centenas(numEnString.substr(1, 1)) +
+                        decenas(numEnString.substr(2, 1)) +
+                        unidades(numEnString.substr(3, 1));
+    }
+
+    if (num > 10000 && num <= 30999){
+        digitoRomano += diezMiles(numEnString.substr(0, 1)) +
+                        miles(numEnString.substr(1, 1)) +
+                        centenas(numEnString.substr(2, 1)) +
+                        decenas(numEnString.substr(3, 1)) +
+                        unidades(numEnString.substr(4, 1));
     }
 
     num = digitoRomano;
@@ -220,4 +230,4 @@ function convertToRoman(num) {
     return num;
    }
 
-   convertToRoman(316);
+   convertToRoman(44);
